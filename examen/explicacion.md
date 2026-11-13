@@ -34,3 +34,21 @@ Si el usuario envía información mediante un formulario, el navegador envía un
 Dentro de la ruta se ejecuta el código desarrollado en Python, encargado de realizar el procesamiento necesario en el backend. Cuando el procesamiento termina, Flask utiliza un template para generar el documento HTML que contendrá el resultado.
 
 Finalmente, el servidor devuelve una response al navegador. El frontend interpreta el HTML, aplica los estilos definidos mediante CSS y Bootstrap, y muestra la información procesada al usuario en pantalla.
+
+## Evidencias de ejecución
+
+- [Inicio](<capturas/INICIO.png>)
+- [Empresa](<capturas/EMPRESA.png>)
+- [Servicios](<capturas/SERVICIOS.png>)
+- [Contacto](<capturas/CONTACTO.png>)
+- [Compra](<capturas/CALCULADORA COMPRAS.png>)
+- [Salario sin horas extra](<capturas/CALCULADORA SALARIO.png>)
+- [Salario con horas extra](<capturas/salario desc.png>)
+- [Conversión de temperatura](<capturas/CALCULADORA TEMPERATURA.png>)
+
+## Interpretación de los cálculos
+
+- **Compra sin descuento:** 5 artículos a $100 dan un subtotal de $500. Como no supera $1,000, no se aplica descuento y el total es $500. Para el caso de referencia, 5 artículos a $250 dan un subtotal de $1,250; el descuento del 10 % es $125 y el total es $1,125.
+- **Salario sin horas extra:** 8 horas a $350 por hora dan $2,800; todas se pagan como horas normales.
+- **Salario con horas extra:** 45 horas a $100 por hora se calculan como 40 horas normales ($4,000) y 5 horas extra al doble ($1,000), para un total de $5,000.
+- **Temperatura:** la evidencia muestra 65 °C, equivalentes a 149 °F y 338.15 K. Para el caso de referencia, 25 °C equivalen a 77 °F y 298.15 K.
