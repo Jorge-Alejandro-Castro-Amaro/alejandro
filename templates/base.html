@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal de Servicios: soluciones digitales y herramientas prácticas.">
+  <title>{% block title %}Portal de Servicios{% endblock %} | Universidad de León</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark portal-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="{{ url_for('inicio') }}">Portal<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#portalNav"
+              aria-controls="portalNav" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="portalNav">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          {% for endpoint, label in [
+            ('inicio', 'Inicio'), ('compra', 'Compra'), ('salario', 'Salario'),
+            ('temperatura', 'Temperatura'), ('empresa', 'Empresa'),
+            ('servicios', 'Servicios'), ('contacto', 'Contacto')
+          ] %}
+          <li class="nav-item">
+            <a class="nav-link{% if request.endpoint == endpoint %} active{% endif %}"
+               {% if request.endpoint == endpoint %}aria-current="page"{% endif %}
+               href="{{ url_for(endpoint) }}">{{ label }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="portal-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <span class="mb-1 mb-md-0">Universidad de León</span>
+      <span>Desarrollo de Aplicaciones Web</span>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/jquery-3.5.1.slim.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

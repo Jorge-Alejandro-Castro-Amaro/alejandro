@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Compra{% endblock %}
+{% block content %}
+<section class="page-banner"><div class="container"><p class="eyebrow">HERRAMIENTAS</p><h1>Calculadora de compra</h1><p>Calcula el importe de tus artículos y aplica el descuento correspondiente.</p></div></section>
+<section class="container page-content">
+  <div class="row justify-content-center"><div class="col-lg-8">
+    <div class="content-card">
+      <form method="post" action="{{ url_for('compra') }}" class="row">
+        <div class="col-md-6 form-group"><label for="cantidad" class="form-label">Cantidad de artículos</label><input id="cantidad" name="cantidad" class="form-control" type="number" min="1" step="1" required value="{{ valores.cantidad }}"></div>
+        <div class="col-md-6 form-group"><label for="precio" class="form-label">Precio unitario ($)</label><input id="precio" name="precio" class="form-control" type="number" min="0" step="0.01" required value="{{ valores.precio }}"></div>
+        <div class="col-12"><button class="btn btn-primary" type="submit">Calcular compra</button></div>
+      </form>
+      {% if error %}<div class="alert alert-danger mt-4 mb-0" role="alert">{{ error }}</div>{% endif %}
+      {% if resultado %}
+      <div class="result-panel mt-4" aria-live="polite">
+        <h2 class="h4">Resultado</h2>
+        <p>Artículos: <strong>{{ resultado.cantidad }}</strong> · Precio unitario: <strong>${{ "%.2f"|format(resultado.precio) }}</strong></p>
+        <dl class="result-list"><div><dt>Subtotal</dt><dd>${{ "%.2f"|format(resultado.subtotal) }}</dd></div><div><dt>Descuento</dt><dd>${{ "%.2f"|format(resultado.descuento) }}</dd></div><div class="result-total"><dt>Total</dt><dd>${{ "%.2f"|format(resultado.total) }}</dd></div></dl>
+      </div>
+      {% endif %}
+    </div>
+  </div></div>
+</section>
+{% endblock %}

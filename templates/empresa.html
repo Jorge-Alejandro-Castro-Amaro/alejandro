@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Empresa{% endblock %}
+{% block content %}
+<section class="page-banner"><div class="container"><p class="eyebrow">QUIÉNES SOMOS</p><h1>Una empresa que impulsa tus ideas</h1><p>Innovación cercana, soluciones útiles y relaciones de confianza.</p></div></section>
+<section class="container page-content">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-3"><img class="feature-image" src="{{ url_for('static', filename='img/empresa.jpg') }}" alt="Equipo de trabajo colaborando en un entorno profesional"></div>
+    <div class="col-lg-6 mb-3"><p class="eyebrow">NUESTRA HISTORIA</p><h2 class="font-weight-bold">Conectamos tecnología con personas</h2><p class="text-secondary">Nexo Digital es una empresa ficticia creada para acercar herramientas y acompañamiento tecnológico a personas y negocios. Creemos que la tecnología tiene más valor cuando es clara, accesible y está al servicio de las personas.</p></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6 mb-4"><article class="info-card h-100"><span class="quick-number">01</span><h2 class="h4 mt-3">Misión</h2><p class="mb-0">Ofrecer soluciones digitales confiables y accesibles que ayuden a nuestros clientes a trabajar mejor y alcanzar sus objetivos.</p></article></div>
+    <div class="col-md-6 mb-4"><article class="info-card h-100"><span class="quick-number">02</span><h2 class="h4 mt-3">Visión</h2><p class="mb-0">Ser un aliado reconocido por hacer más sencilla la transformación digital y generar oportunidades para nuestra comunidad.</p></article></div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Servicios{% endblock %}
+{% block content %}
+<section class="page-banner"><div class="container"><p class="eyebrow">LO QUE HACEMOS</p><h1>Servicios para tus proyectos</h1><p>Ideas prácticas y acompañamiento para cada etapa de tu crecimiento.</p></div></section>
+<section class="container page-content">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4"><article class="card service-card h-100"><img src="{{ url_for('static', filename='img/servicio-consultoria.jpg') }}" class="card-img-top" alt="Panel digital con gráficas y análisis de datos"><div class="card-body"><span class="service-tag">ESTRATEGIA</span><h2 class="h4 card-title mt-2">Consultoría digital</h2><p class="card-text text-secondary">Te ayudamos a identificar oportunidades y crear una ruta clara para modernizar tus procesos.</p></div></article></div>
+    <div class="col-md-6 col-lg-4 mb-4"><article class="card service-card h-100"><img src="{{ url_for('static', filename='img/servicio-web.jpg') }}" class="card-img-top" alt="Desarrollo de soluciones web en una computadora"><div class="card-body"><span class="service-tag">TECNOLOGÍA</span><h2 class="h4 card-title mt-2">Desarrollo web</h2><p class="card-text text-secondary">Diseñamos sitios y aplicaciones web funcionales, adaptables y centradas en las necesidades de cada proyecto.</p></div></article></div>
+    <div class="col-md-6 col-lg-4 mb-4"><article class="card service-card h-100"><img src="{{ url_for('static', filename='img/servicio-capacitacion.jpg') }}" class="card-img-top" alt="Personas en una sesión de capacitación"><div class="card-body"><span class="service-tag">APRENDIZAJE</span><h2 class="h4 card-title mt-2">Capacitación</h2><p class="card-text text-secondary">Compartimos conocimientos para que tu equipo aproveche mejor sus herramientas digitales.</p></div></article></div>
+  </div>
+  <div class="callout mt-5"><div><h2 class="h4 mb-1">¿Tienes un proyecto en mente?</h2><p class="mb-0 text-secondary">Nos encantará conocerlo y ayudarte a dar el siguiente paso.</p></div><a class="btn btn-primary" href="{{ url_for('contacto') }}">Contáctanos</a></div>
+</section>
+{% endblock %}
